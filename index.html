@@ -7,16 +7,27 @@
       background: black;
       color: white;
     }
+    a {
+      color: white;
+    }
   </style>
 </head>
 <body>
   <h1>Welcome! 歡迎來到！</h1>
   <p>This is my email domain's placeholder. 這是我的電子郵件域名的佔位。</p>
   <button id="btn">Click to reveal email. 點擊展示郵件。</button>
-  <p id="email"></p>
+  <br><br>
+  <a id="email"></a>
   <script>
     var btn = document.getElementById('btn');
     var email = document.getElementById('email');
+    var scrambled = 'tcatnoc.bmi@bmi';
+    
+    btn.onclick = function() {
+    	var unscrambled = scrambled.split('').reverse().join('');
+    	email.innerText = unscrambled;
+      email.href = 'mailto:'+unscrambled;
+    };
   </script>
 </body>
 </html>
